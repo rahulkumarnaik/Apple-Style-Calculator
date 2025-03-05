@@ -1,0 +1,138 @@
+/* styles.css */
+/* Apple Calculator Style - iOS 17+ Design System */
+
+.calculator {
+    width: 320px;
+    background: #000000;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 50px auto;
+    font-family: -apple-system, BlinkMacSystemFont;
+    box-sizing: border-box;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+#display {
+    width: calc(100% - 10px);
+    height: 80px;
+    background: #000;
+    border: none;
+    color: #FFFFFF;
+    text-align: right;
+    font-size: 48px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    font-weight: 300; /* Apple's light font weight */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.btn {
+    width: 100%;
+    height: 65px;
+    border: none;
+    border-radius: 50%;
+    font-size: 28px;
+    cursor: pointer;
+    transition: filter 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+/* Official Apple Color Scheme */
+.btn.orange {
+    background: #FF9500; /* Primary orange */
+    color: white;
+}
+
+.btn.orange:hover {
+    background: #FF9F0A; /* Hover state */
+}
+
+.btn.orange:active {
+    background: #FFAA33; /* Active state */
+}
+
+.btn.gray {
+    background: #D4D4D2; /* Light gray */
+    color: #1C1C1C;
+}
+
+.btn.gray:hover {
+    background: #CECED2;
+}
+
+.btn.gray:active {
+    background: #B8B8B6;
+}
+
+.btn.dark {
+    background: #1C1C1C; /* Dark buttons */
+    color: white;
+}
+
+.btn.dark:hover {
+    background: #2D2D2D;
+}
+
+.btn.dark:active {
+    background: #3E3E3E;
+}
+
+/* Zero Button Special Styling */
+.zero {
+    grid-column: span 2;
+    border-radius: 35px;
+    padding-left: 30px;
+    justify-content: flex-start;
+}
+
+/* iOS-style Active States */
+.btn:active {
+    transform: scale(0.95);
+    filter: brightness(110%);
+}
+
+/* Focus States for Accessibility */
+.btn:focus-visible {
+    outline: 2px solid #007AFF;
+    outline-offset: 2px;
+}
+
+/* Display Font Smoothing */
+#display {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 375px) {
+    .calculator {
+        margin: 20px auto;
+        width: 300px;
+        padding: 15px;
+    }
+    
+    .btn {
+        height: 60px;
+        font-size: 26px;
+    }
+    
+    #display {
+        font-size: 44px;
+        height: 70px;
+    }
+    
+    .zero {
+        padding-left: 25px;
+    }
+}
